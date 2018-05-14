@@ -33,17 +33,17 @@ TheLetter.prototype ={
 
     save:function(title,content){
         if(!title || !content){
-            throw new Error("empty title or content")
+            throw new Error("empty number or content")
         }
 
-        if(title.length > 20 || content.length > 500){
-            throw new Error("title or content  exceed limit length")
+        if(title.length > 30 || content.length > 1000){
+            throw new Error("  exceed limit length")
         }
 
         var from = Blockchain.transaction.from;
         var letterItem = this.data.get(title);
         if(letterItem){
-            throw new Error("letter has been occupied");
+            throw new Error("number has been occupied");
         }
 
         letterItem = new LetterItem();
@@ -56,7 +56,7 @@ TheLetter.prototype ={
 
     get:function(title){
         if(!title){
-            throw new Error("empty title")
+            throw new Error("empty ")
         }
         return this.data.get(title);
     }
